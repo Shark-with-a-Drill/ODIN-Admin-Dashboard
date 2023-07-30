@@ -6,6 +6,8 @@
     padding: 0;
     --card-color: #181a1b; 
     --bg-color:#1c1e1f;
+    --divider: #292c2e;
+    --roundedcard: 10px;
   }
   body {
     line-height: 1.5;
@@ -90,7 +92,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-auto-rows: min-content;
     gap: 20px;
-    padding: 15px;
+    margin: 15px;
   }
   .projects-title {
     grid-column: -1 / 1;
@@ -99,10 +101,13 @@
     display: flex;
     flex-direction: column;
     background-color: var(--card-color);
+    padding: 15px;
+    border-radius: var(--roundedcard);
   }
   .project-holder > img {
     height: 75px;
     object-fit: cover;
+    border-radius: 5px;
   }
   .project-holder > h3, .project-holder > p {
     width: fit-content;
@@ -117,16 +122,18 @@
     grid-column: 2 / 3;
     display: grid;
     grid-template-rows: min-content;
+
   }
   .announcements {
     display: grid;
     grid-auto-rows: min-content;
-    gap: 15px;
-    margin: 7.5px;
+    margin: 15px 20px 15px 7.5px;
   }
   .announcements-title {
     grid-column: -1 / 1;
     grid-row: -1 / 1;
+    margin-left: 15px;
+    margin-bottom: 10px;
   }
   .announcements-holder {
     display: flex;
@@ -136,20 +143,43 @@
   }
   #announcements-holder {
     background-color: var(--card-color);
+    display: grid;
+    grid-auto-rows: min-content;
+    padding: 15px;
+    border-radius: var(--roundedcard);
+  }
+  .divider {
+    margin-top: 7.5px;
+    margin-bottom: 7.5px;
+    height: 1px;
+    background-color: var(--divider);
   }
 
   .trending {
     display: grid;
     grid-auto-rows: min-content;
-    gap: 15px;
-    margin: 7.5px;
+    margin: 15px 20px 15px 7.5px;
+  }
+  .trending-title {
+    margin-left: 15px;
+    margin-bottom: 10px;
   }
   .trending-holder {
-    display: inline-flex;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: max-content 1fr;
   }
   #trending-holder {
     background-color: var(--card-color);
+    display: grid;
+    grid-auto-rows: min-content;
+    padding: 15px;
+    border-radius: var(--roundedcard);
+  }
+  .trending-text {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    padding-left: 15px;
   }
   .trending-image {
     width: 50px;
