@@ -7,6 +7,7 @@
     --card-color: #181a1b; 
     --bg-color:#1c1e1f;
     --divider: #292c2e;
+    --user-img-border: #464646;
     --roundedcard: 10px;
   }
   body {
@@ -40,39 +41,76 @@
   html:focus-within {
     scroll-behavior: smooth;
   }
-
+  .divider {
+    background-color: var(--divider);
+    height: 1px;
+    margin-bottom: 7.5px;
+    margin-top: 7.5px;
+  }
+  .v-divider {
+    background-color: var(--divider);
+    width: 1px;
+    height: 75%;
+    margin-bottom: 7.5px;
+    margin-top: 7.5px;
+  }
   .main-grid {
     display: grid;
     grid-template-columns: max-content minmax(500px, 1fr);
-    grid-template-rows: max-content 100%;
+    grid-template-rows: 100px 100vh 50px;
+    min-width: 800px;
   }
+  
   .header {
-    grid-column: 2 / 3;
     display: grid;
-    grid-template-rows: max-content;
-    grid-template-columns: 1fr 300px;
+    grid-column: 2 / 4;
+    grid-template-columns: 1fr min-content;
+    align-items: center;
     padding: 15px;
-    background-color: var(--card-color);
-    margin: 7.5px;
+    margin: 15px;
+    border-radius: var(--roundedcard);
   }
   .navbar-links {
+    height: 100%;
     display: flex;
-    gap: 10px;
-    justify-content: flex-start;
+    gap: 15px;
+    grid-column: 1 / 2;
   }
   .user {
     display: flex;
-    gap: 10px;
-    justify-content: center;
+    gap: 15px;
+    grid-column: 2 / 3;
+    align-items: center;
+    height: 100%;
   }
-
+  .user img {
+    max-height: 50px;
+    max-width: 50px;
+    border-radius: 50%;
+  }
+  .user-info {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
   .sidebar {
-    grid-row: 1 / 3;
     background-color: var(--card-color);
+    grid-row: 1 / -1;
+    padding: 25px;
+  }
+  .upper-sidebar {
+    display: grid;
+    gap: 20px;
+    grid-auto-rows: max-content;
   }
   .upper {
     display: flex;
     gap: 5px;
+  }
+  .lower-sidebar {
+    display: grid;
+    gap: 20px;
+    grid-auto-rows: max-content;
   }
   .lower {
     display: flex;
@@ -81,33 +119,33 @@
 
 
   .main {
+    display: grid;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    display: grid;
     grid-template-columns: 1fr 300px;
   }
   .projects {
-    grid-column: 1 / 2;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-auto-rows: min-content;
     gap: 20px;
+    grid-auto-rows: min-content;
+    grid-column: 1 / 2;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin: 15px;
   }
   .projects-title {
     grid-column: -1 / 1;
   }
   .project-holder {
+    background-color: var(--card-color);
+    border-radius: var(--roundedcard);
     display: flex;
     flex-direction: column;
-    background-color: var(--card-color);
     padding: 15px;
-    border-radius: var(--roundedcard);
   }
   .project-holder > img {
+    border-radius: 5px;
     height: 75px;
     object-fit: cover;
-    border-radius: 5px;
   }
   .project-holder > h3, .project-holder > p {
     width: fit-content;
@@ -119,10 +157,9 @@
   }
 
   .info-bar {
-    grid-column: 2 / 3;
     display: grid;
+    grid-column: 2 / 3;
     grid-template-rows: min-content;
-
   }
   .announcements {
     display: grid;
@@ -132,27 +169,22 @@
   .announcements-title {
     grid-column: -1 / 1;
     grid-row: -1 / 1;
-    margin-left: 15px;
     margin-bottom: 10px;
+    margin-left: 15px;
   }
   .announcements-holder {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    gap: 10px;
     overflow: hidden;
   }
   #announcements-holder {
     background-color: var(--card-color);
+    border-radius: var(--roundedcard);
     display: grid;
     grid-auto-rows: min-content;
     padding: 15px;
-    border-radius: var(--roundedcard);
-  }
-  .divider {
-    margin-top: 7.5px;
-    margin-bottom: 7.5px;
-    height: 1px;
-    background-color: var(--divider);
   }
 
   .trending {
@@ -161,19 +193,20 @@
     margin: 15px 20px 15px 7.5px;
   }
   .trending-title {
-    margin-left: 15px;
     margin-bottom: 10px;
+    margin-left: 15px;
   }
   .trending-holder {
-    display: grid;
-    grid-template-columns: max-content 1fr;
+    display: flex;
+    padding-bottom: 5px;
+    padding-top: 5px;
   }
   #trending-holder {
     background-color: var(--card-color);
+    border-radius: var(--roundedcard);
     display: grid;
     grid-auto-rows: min-content;
     padding: 15px;
-    border-radius: var(--roundedcard);
   }
   .trending-text {
     display: flex;
@@ -182,6 +215,9 @@
     padding-left: 15px;
   }
   .trending-image {
+    border-radius: 50%;
+    height: 50px;
+    object-fit: cover;
     width: 50px;
   }
 
