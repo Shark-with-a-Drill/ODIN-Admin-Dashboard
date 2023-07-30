@@ -1,5 +1,10 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Rubik&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Rubik:wght@300;400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Rubik:wght@300;400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Rubik:wght@300;400;500;700&display=swap');
   *, *::before, *::after {
     box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
   }
   * {
     margin: 0;
@@ -9,6 +14,10 @@
     --divider: #292c2e;
     --user-img-border: #464646;
     --roundedcard: 10px;
+    --smalltextcolor: #9d9588;
+    --bigtextcolor: #bab4ab;
+    --sidebarcolor: #828490;
+    --logocolor: #e8e6e3;
   }
   body {
     line-height: 1.5;
@@ -68,7 +77,8 @@
     align-items: center;
     padding: 15px;
     margin: 15px;
-    border-radius: var(--roundedcard);
+    border-radius: 7.5px;
+    background-color: var(--card-color);
   }
   .navbar-links {
     height: 100%;
@@ -87,16 +97,28 @@
     max-height: 50px;
     max-width: 50px;
     border-radius: 50%;
+    border: 2px solid var(--smalltextcolor);
   }
   .user-info {
     display: flex;
     gap: 15px;
     align-items: center;
   }
+  .header a, .header p {
+    color: var(--smalltextcolor);
+  }
+  .header i {
+    color: lightgreen;
+  }
+
   .sidebar {
     background-color: var(--card-color);
     grid-row: 1 / -1;
     padding: 25px;
+  }
+  .sidebar .divider {
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
   .upper-sidebar {
     display: grid;
@@ -115,6 +137,16 @@
   .lower {
     display: flex;
     gap: 5px;
+  }
+  .sidebar h1 {
+    color: var(--logocolor);
+    font-weight: 400;
+  }
+  .sidebar i {
+    color: var(--sidebarcolor);
+  }
+  .sidebar p {
+    color: var(--smalltextcolor);
   }
 
 
@@ -149,6 +181,16 @@
   }
   .project-holder > h3, .project-holder > p {
     width: fit-content;
+  }
+  .projects p {
+    color: var(--smalltextcolor);
+  }
+  .projects h2, .projects h3 {
+    color: var(--bigtextcolor);
+    font-weight: 400;
+  }
+  .projects i {
+    color: var(--sidebarcolor);
   }
   .icons {
     display: flex;
@@ -219,8 +261,35 @@
     height: 50px;
     object-fit: cover;
     width: 50px;
+    border: 2px solid var(--smalltextcolor);
+  }
+  .info-bar h2, .info-bar h3 {
+    color: var(--bigtextcolor);
+    font-weight: 400;
+  }
+  .info-bar a, .info-bar p {
+    color: var(--smalltextcolor);
+  }
+  .trending p:first-of-type:hover {
+    cursor: pointer;
+    color: lightseagreen;
+  }
+  .info-bar a {
+    text-decoration: underline;
   }
 
   .shadowbox {
     box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.282);
+  }
+
+  .upper:hover i, .upper:hover p {
+    color: aquamarine;
+    cursor: pointer;
+  }
+  .lower:hover i, .lower:hover p {
+    color: palevioletred;
+    cursor: pointer;
+  }
+  .header a:hover, .info-bar a:hover {
+    color: lightskyblue;
   }
