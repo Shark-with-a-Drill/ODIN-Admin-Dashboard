@@ -2,6 +2,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Rubik:wght@300;400&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Rubik:wght@300;400;500&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Rubik:wght@300;400;500;700&display=swap');
+  @import url('https://www.w3schools.com/w3css/4/w3.css');
   *, *::before, *::after {
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
@@ -106,6 +107,7 @@
   }
   .header a, .header p {
     color: var(--smalltextcolor);
+    font-size: 16px;
   }
   .header i {
     color: lightgreen;
@@ -140,7 +142,7 @@
   }
   .sidebar h1 {
     color: var(--logocolor);
-    font-weight: 400;
+    font-weight: 600;
   }
   .sidebar i {
     color: var(--sidebarcolor);
@@ -166,36 +168,45 @@
   }
   .projects-title {
     grid-column: -1 / 1;
+    margin-left: 15px;
   }
   .project-holder {
     background-color: var(--card-color);
     border-radius: var(--roundedcard);
     display: flex;
     flex-direction: column;
+    height: 250px;
     padding: 15px;
+    transition: border-color 0.5s ease, height 0.5s ease;
   }
   .project-holder > img {
     border-radius: 5px;
     height: 75px;
     object-fit: cover;
+    margin-bottom: 10px;
   }
   .project-holder > h3, .project-holder > p {
     width: fit-content;
+  }
+  .project-holder h3 {
+    margin: 0;
   }
   .projects p {
     color: var(--smalltextcolor);
   }
   .projects h2, .projects h3 {
     color: var(--bigtextcolor);
-    font-weight: 400;
+    font-weight: 500;
   }
   .projects i {
     color: var(--sidebarcolor);
+    cursor: pointer;
   }
   .icons {
     display: flex;
     gap: 5px;
-    justify-content: right;
+    justify-content: flex-end;
+    margin-top: auto;
   }
 
   .info-bar {
@@ -267,8 +278,15 @@
     color: var(--bigtextcolor);
     font-weight: 400;
   }
+  .info-bar h3 {
+    font-size: large;
+    margin-bottom: 0;
+  }
   .info-bar a, .info-bar p {
     color: var(--smalltextcolor);
+  }
+  .trending p:first-of-type {
+    color: var(--bigtextcolor);
   }
   .trending p:first-of-type:hover {
     cursor: pointer;
@@ -292,4 +310,44 @@
   }
   .header a:hover, .info-bar a:hover {
     color: lightskyblue;
+  }
+  .project-holder:hover {
+    border: 1px solid lightcoral;
+    height: 260px;
+  }
+  .project-holder i:first-of-type:hover {
+    color: lightseagreen;
+  }
+  .project-holder i:not(:first-of-type,:last-of-type):hover {
+    color: palevioletred;
+  }
+  .project-holder i:last-of-type:hover {
+    color: lightskyblue;
+  }
+
+  #searchbar {
+    background-color: var(--bg-color);
+    transition: all 0.3s ease;
+    padding: 5px 35px 5px 15px;
+  }
+  #searchbar:not(:focus),#searchbar:not(:focus):valid {
+    background-color: var(--bg-color);
+    background-image: url('./media/search.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    border-radius: 30px;
+    border: none;
+    height: 40px;
+    width: 40px;
+    color: transparent;
+  }
+  #searchbar:focus, #searchbar:valid {
+    background-color: var(--bg-color);
+    border: none;
+    outline: none;
+    color: var(--smalltextcolor);
+    width: 200px;
+    height: 40px;
+    border-radius: 30px;
   }
