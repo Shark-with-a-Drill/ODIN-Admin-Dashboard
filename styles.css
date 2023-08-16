@@ -109,8 +109,12 @@
     color: var(--smalltextcolor);
     font-size: 16px;
   }
+  .header a {
+    transition: color 0.5s ease;
+  }
   .header i {
     color: lightgreen;
+    transition: color 0.25s ease, font-size 0.25s ease;
   }
 
   .sidebar {
@@ -317,7 +321,7 @@
     height: 340px;
   }
   .project-holder:hover > img {
-    height: 150px;
+    height: 140px;
   }
   .project-holder i:first-of-type:hover {
     color: lightseagreen;
@@ -354,4 +358,10 @@
     width: 200px;
     height: 40px;
     border-radius: 30px;
+  }
+
+  .header i:hover {
+    cursor: pointer;
+    color:lightseagreen;
+    font-size: 28px;
   }
