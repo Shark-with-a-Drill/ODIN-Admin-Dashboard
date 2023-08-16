@@ -184,6 +184,7 @@
     height: 75px;
     object-fit: cover;
     margin-bottom: 10px;
+    transition: height 0.5s ease;
   }
   .project-holder > h3, .project-holder > p {
     width: fit-content;
@@ -313,7 +314,10 @@
   }
   .project-holder:hover {
     border: 1px solid lightcoral;
-    height: 310px;
+    height: 340px;
+  }
+  .project-holder:hover > img {
+    height: 150px;
   }
   .project-holder i:first-of-type:hover {
     color: lightseagreen;
